@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let product of products" class="product-card">
+    <ion-card-header>
+      <ion-card-title>{{ product.nombre }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="card-content">
+        <ion-img [src]="product.url_foto" class="product-image"></ion-img> <!-- Imagen del producto -->
+        <div class="product-details"> <!-- Contenedor para detalles del producto -->
+          {{ product.descripcion }} <br>
+          Cantidad: {{ product.cantidad }} <br>
+          Precio Venta: ${{ product.precio_venta }} <br>
+          Precio Costo: ${{ product.precio_costo }}
+        </div>
+      </div>
+      <ion-button expand="block" shape="round" (click)="deleteProduct(product.id)" color="danger">Eliminar</ion-button>
+      <ion-button expand="block" shape="round" (click)="editProduct(product)" color="primary">Editar</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addProduct()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl = 'https://vvt9r64f-3000.usw3.devtunnels.ms/api/productos'; // URL de la API
+  private apiUrl = 'https://qd8kc8w7-3000.use2.devtunnels.ms/api/productos'; // URL de la API
 
   constructor(private http: HttpClient) {}
 
